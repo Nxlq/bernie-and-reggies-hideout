@@ -2,10 +2,19 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <div class="message-board">
+      <% messages.forEach(mes => { %>
+      <div class="message__container">
+        <h3 class="message-name"><%= mes.name %>:</h3>
+        <p class="message"><%= mes.message %></p>
+        <p>posted at - <%= mes.date %></p>
+      </div>
+      <% }) %>
+    </div>
   </body>
 </html>
