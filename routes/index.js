@@ -12,6 +12,11 @@ const messages = [
     message: "Sure whatever idgaf 🤷‍♂️",
     date: new Date(),
   },
+  {
+    name: "Bernie",
+    message: "IDGAF EITHER AHAHAHAHAHAH 😂😁😁🤣🤣",
+    date: new Date(),
+  },
 ];
 
 /* GET home page. */
@@ -20,6 +25,16 @@ router.get("/", function (req, res, next) {
     title: "Bernie and Reggie's Hideout",
     messages: messages,
   });
+});
+
+router.get("/new", function (req, res, next) {
+  res.render("newMessageForm", { title: "Bernie and Reggie's Hideout" });
+});
+
+router.post("/new", function (req, res, next) {
+  const { name, messageText } = req.body;
+  messages.push({ name, message: messageText, date: new Date() });
+  res.redirect("/");
 });
 
 module.exports = router;

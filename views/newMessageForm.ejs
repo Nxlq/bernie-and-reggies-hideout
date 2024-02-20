@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title><%= locals.title || '' %></title>
+  </head>
+  <body>
+    <form class="new-message-form" method="POST" action="/new">
+      <h1>Create Message:</h1>
+      <label>
+        Name:
+        <input
+          type="text"
+          id="name-input"
+          name="name"
+          required
+          placeholder="name here"
+        />
+      </label>
+      <label>
+        Message:
+        <textarea
+          name="messageText"
+          id="message-input"
+          cols="30"
+          rows="10"
+          placeholder="message here"
+          required
+        ></textarea>
+      </label>
+      <button type="submit">Post</button>
+    </form>
+  </body>
+</html>

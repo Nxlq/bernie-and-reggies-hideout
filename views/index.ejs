@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title><%= locals.title || '' %></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="header__container">
+      <h1><%= locals.title || '' %></h1>
+      <p id="disclaimer">KEEP IT QUIET so nobody hears you</p>
+      <a class="btn-create-message" href="/new">+</a>
+    </div>
     <div class="message-board">
       <% messages.forEach(mes => { %>
       <div class="message__container">
